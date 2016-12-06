@@ -1,10 +1,10 @@
 // Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 #pragma once
 #include "GameFramework/Actor.h"
-#include "TestingGroundZeroProjectile.generated.h"
+#include "Projectile.generated.h"
 
 UCLASS(config=Game)
-class ATestingGroundZeroProjectile : public AActor
+class AProjectile : public AActor
 {
 	GENERATED_BODY()
 
@@ -17,7 +17,7 @@ class ATestingGroundZeroProjectile : public AActor
 	class UProjectileMovementComponent* ProjectileMovement;
 
 public:
-	ATestingGroundZeroProjectile();
+	AProjectile();
 
 	/** called when projectile hits something */
 	UFUNCTION()

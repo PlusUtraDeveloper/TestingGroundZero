@@ -2,7 +2,7 @@
 
 #include "TestingGroundZero.h"
 #include "FirstPersonPlayer.h"
-#include "TestingGroundZeroProjectile.h"
+#include "Weapons/Projectile.h"
 #include "Animation/AnimInstance.h"
 #include "GameFramework/InputSettings.h"
 #include "Kismet/HeadMountedDisplayFunctionLibrary.h"
@@ -144,7 +144,7 @@ void AFirstPersonPlayer::OnFire()
 			{
 				const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
 				const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
-				World->SpawnActor<ATestingGroundZeroProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+				World->SpawnActor<AProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
 			}
 			else
 			{
@@ -153,7 +153,7 @@ void AFirstPersonPlayer::OnFire()
 				const FVector SpawnLocation = ((FP_MuzzleLocation != nullptr) ? FP_MuzzleLocation->GetComponentLocation() : GetActorLocation()) + SpawnRotation.RotateVector(GunOffset);
 
 				// spawn the projectile at the muzzle
-				World->SpawnActor<ATestingGroundZeroProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+				World->SpawnActor<AProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
 			}
 		}
 	}
