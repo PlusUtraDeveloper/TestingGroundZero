@@ -1,12 +1,12 @@
 // Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 #pragma once
 #include "GameFramework/Character.h"
-#include "TestingGroundZeroCharacter.generated.h"
+#include "FirstPersonPlayer.generated.h"
 
 class UInputComponent;
 
 UCLASS(config=Game)
-class ATestingGroundZeroCharacter : public ACharacter
+class AFirstPersonPlayer : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -42,7 +42,7 @@ class ATestingGroundZeroCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UMotionControllerComponent* L_MotionController;
 public:
-	ATestingGroundZeroCharacter();
+	AFirstPersonPlayer();
 
 	virtual void BeginPlay();
 
