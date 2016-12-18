@@ -5,7 +5,7 @@
 #include "GameFramework/Actor.h"
 #include "Gun.generated.h"
 
-UCLASS()
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class TESTINGGROUNDZERO_API AGun : public AActor
 {
 	GENERATED_BODY()
@@ -51,6 +51,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	class UAnimInstance* AnimInstance;
 
+
+	UFUNCTION(BlueprintCallable, Category = "Input")
 	void OnFire();
 	
 	
